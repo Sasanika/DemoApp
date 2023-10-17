@@ -19,6 +19,7 @@ import Screen31 from './Screens/Screen31';
 import Screen32 from './Screens/Screen32';
 import Screen33 from './Screens/Screen33';
 import Screen34 from './Screens/Screen34';
+import Screen61 from './Screens/Screen61';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -64,6 +65,22 @@ function SecondStackRoutes() {
   );
 }
 
+
+function ThirdStackRoutes() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name='Screen6' component={Screen6} options={{ title: 'My Profile' }} />
+      <Stack.Screen
+        name='Screen61'
+        component={Screen61}
+        options={{ title: 'Edit Info' }}
+      />
+    </Stack.Navigator>
+  );
+}
+
+
+
 function DraweRoutes() {
   return (
     <Drawer.Navigator initialRouteName='Home'>
@@ -85,7 +102,10 @@ function DraweRoutes() {
         options={{ title: 'QR Code Scan' }}
       />
       <Drawer.Screen name='Screen5' component={Screen5} options={{ title: 'Settings' }} />
-      <Drawer.Screen name='Screen6' component={Screen6} options={{ title: 'My Profile' }} />
+      <Drawer.Screen name='Screen6' 
+        component={ThirdStackRoutes} 
+        options={{ title: 'My Profile' }} 
+        />
       <Drawer.Screen
         name='Screen7'
         component={FirstStackRoutes}

@@ -3,7 +3,7 @@ import { StyleSheet, View, Image, Text, ScrollView, TouchableOpacity } from 'rea
 import { IconButton, MD3Colors, Provider as PaperProvider } from 'react-native-paper';
 import 'react-native-gesture-handler';
 
-const MyProfile = () => {
+const MyProfile = (props) => {
   // State to hold user information
   const [userData, setUserData] = useState({
     username: 'JohnDoe',
@@ -48,7 +48,7 @@ const MyProfile = () => {
 
           <TouchableOpacity
             style={styles.saveButton}
-            onPress={handleSaveButtonPress}
+            onPress={() => props.navigation.replace('Screen61')}
           >
             <Text style={styles.saveButtonText}>Edit Details</Text>
           </TouchableOpacity>
@@ -61,7 +61,7 @@ const MyProfile = () => {
 
 function Screen6(props) {
   return (
-    <MyProfile/>
+    <MyProfile navigation={props.navigation} />
   );
 }
 
