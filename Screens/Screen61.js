@@ -16,7 +16,7 @@ function Screen61(props) {
       <PaperProvider>
         <View style={styles.container}>
         <TouchableOpacity
-        onPress={() => props.navigation.replace('Screen6')} // Use navigation.replace here
+        onPress={() => props.navigation.replace('MyProfile')} // Use navigation.replace here
         style={{ position: 'absolute', top: 15, left: 20, zIndex: 1 }}
       >
         <Icon name="arrow-left" size={30} color="red" />

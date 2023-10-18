@@ -48,7 +48,7 @@ const MyProfile = (props) => {
 
           <TouchableOpacity
             style={styles.editButton}
-            onPress={() => props.navigation.replace('Screen61')}
+            onPress={() => props.navigation.replace('EditInfo')}
           >
             <Text style={styles.editButtonText}>Edit Details</Text>
           </TouchableOpacity>

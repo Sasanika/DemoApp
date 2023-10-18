@@ -19,7 +19,7 @@ function Screen32(props) {
   return (
     <View style={[styles.container, { flexDirection: 'column' }]}>
       <TouchableOpacity
-        onPress={() => props.navigation.replace('Screen31')} // Use navigation.replace here
+        onPress={() => props.navigation.replace('BookNewSpace')} // Use navigation.replace here
         style={{ position: 'absolute', top: 15, left: 20, zIndex: 1 }}
       >
         <Icon name="arrow-left" size={30} color="red" />
@@ -79,7 +79,7 @@ function Screen32(props) {
               <Text style={{ top: 15, fontSize: 14 }}>Optional: </Text>
             </View>
 
-            <TouchableOpacity style={styles.button} onPress={() => props.navigation.replace('Screen33')}>
+            <TouchableOpacity style={styles.button} onPress={() => props.navigation.replace('QRCode')}>
               <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 18 }}>Generate QR Code</Text>
             </TouchableOpacity>
           </View>

@@ -26,7 +26,7 @@ function Screen7(props) {
         </TouchableOpacity>
 
         {/* Terms & Conditions */}
-        <TouchableOpacity onPress={() => props.navigation.replace('Screen71')}>
+        <TouchableOpacity onPress={() => props.navigation.replace('TermsAndServices')}>
           <Text style={styles.linkText}>3. Terms & Conditions</Text>
         </TouchableOpacity>
 

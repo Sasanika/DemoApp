@@ -43,7 +43,7 @@ const Screen33 = ({ navigation }) => { // Destructure `navigation` from props
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <TouchableOpacity
-        onPress={() => navigation.replace('Screen32')}
+        onPress={() => navigation.replace('BookingConfirm')}
         style={{ position: 'absolute', top: 20, left: 20, zIndex: 1 }}
       >
         <Icon name="arrow-left" size={30} color="red" />

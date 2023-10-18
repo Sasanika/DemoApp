@@ -7,7 +7,7 @@ function Screen71(props) {
   return (
     <View style={{flex: 1 ,backgroundColor: 'white', padding:15 }}>
         <TouchableOpacity
-        onPress={() => props.navigation.replace('Screen7')} // Use navigation.replace here
+        onPress={() => props.navigation.replace('HelpAndSupport')} // Use navigation.replace here
         style={{ position: 'absolute', top: 15, left: 20, zIndex: 1 }}
       >
         <Icon name="arrow-left" size={30} color="red" />

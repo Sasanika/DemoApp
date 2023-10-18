@@ -66,7 +66,7 @@ function Screen3(props) {
   return (
     <View style={styles.container}>
       <View style={{ flex: 7, backgroundColor: 'white' }}>
-        <TouchableOpacity style={styles.bookButton} onPress={() => props.navigation.replace('Screen31')}>
+        <TouchableOpacity style={styles.bookButton} onPress={() => props.navigation.replace('BookNewSpace')}>
           <IconButton icon="plus-circle" color="blue" size={30} />
         </TouchableOpacity>
 
