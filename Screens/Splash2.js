@@ -24,7 +24,7 @@ const Splash2 = ({ navigation }) => {
         </Text>
         <TouchableOpacity
           style={styles.overlayButton}
-          onPress={() => navigation.replace('Login')}
+          onPress={() => navigation.replace('SignUp')}
         >
           <Text style={styles.overlayButtonText}>Share Your Space</Text>
         </TouchableOpacity>

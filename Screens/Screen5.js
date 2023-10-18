@@ -25,7 +25,7 @@ const Setting = () => {
         </Text>
         <ToggleSwitch
           isOn={notificationsEnabled}
-          onColor="blue"
+          onColor="gray"
           offColor="red"
           label="Notifications"
           labelStyle={{ color: "black", fontWeight: "900" }}

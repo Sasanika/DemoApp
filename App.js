@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
-import Login from './Screens/Login';
+import SignUp from './Screens/SignUp';
 import Splash0 from './Screens/Splash0';
 import Splash from './Screens/Splash';
 import Screen1 from './Screens/Screen1';
@@ -20,6 +20,7 @@ import Screen31 from './Screens/Screen31';
 import Screen32 from './Screens/Screen32';
 import Screen33 from './Screens/Screen33';
 import Screen61 from './Screens/Screen61';
+import SignIn from './Screens/SignIn';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -78,7 +79,8 @@ const App = () => {
           <Stack.Screen name='Splash' component={Splash} />
           <Stack.Screen name='Splash1' component={Splash1} />
           <Stack.Screen name='Splash2' component={Splash2} />
-          <Stack.Screen name='Login' component={Login} />
+          <Stack.Screen name='SignUp' component={SignUp} />
+          <Stack.Screen name='SignIn' component={SignIn} />
           <Stack.Screen name='Home' component={DrawerRoutes} />
         </Stack.Navigator>
       ) : (

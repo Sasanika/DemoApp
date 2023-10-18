@@ -40,7 +40,10 @@ const Login = (props) => {
         />
 
         <Text style={styles.bottomText}>
-          Already have an account? Sign In
+          Already have an account?  
+          <TouchableOpacity onPress={() => props.navigation.replace('SignIn')}>
+          <Text style={{color:'red', fontWeight:'bold',}}>Sign In</Text>
+          </TouchableOpacity>
         </Text>
       </View>
     </View>
@@ -100,11 +103,12 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginTop: 25,
   },
-  input: {
+  input:{
     width: '80%',
     height: 40,
-    backgroundColor: '#416ddc',
-    borderRadius: 8,
+    backgroundColor: '#042476',
+    borderBottomColor: '#89CFF0', // This sets the color to white
+    borderBottomWidth: 2,
     marginBottom: 10,
     paddingHorizontal: 10,
   },
