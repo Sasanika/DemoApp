@@ -1,12 +1,17 @@
 import React from 'react';
-import { StyleSheet, View, Text, ScrollView } from 'react-native';
-import { IconButton, MD3Colors } from 'react-native-paper'; 
+import { StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import 'react-native-gesture-handler';
 
 function Screen71(props) {
   return (
     <View style={{flex: 1 ,backgroundColor: 'white', padding:15 }}>
-
+        <TouchableOpacity
+        onPress={() => props.navigation.replace('Screen7')} // Use navigation.replace here
+        style={{ position: 'absolute', top: 15, left: 20, zIndex: 1 }}
+      >
+        <Icon name="arrow-left" size={30} color="red" />
+      </TouchableOpacity>
       <ScrollView style={styles.container}>
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Terms of Service for ShareSpace</Text>
@@ -113,6 +118,7 @@ function Screen71(props) {
 
 const styles = StyleSheet.create({
   container: {
+    marginTop:35,
     flex: 1,
   },
   

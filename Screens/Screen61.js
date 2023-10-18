@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Image, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { IconButton, MD3Colors, TextInput, Provider as PaperProvider } from 'react-native-paper';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
-const EditInfo = () => {
+function Screen61(props) {
     const [text, setText] = useState('');
   
     const handleSaveButtonPress = () => {
@@ -14,7 +15,12 @@ const EditInfo = () => {
     return (
       <PaperProvider>
         <View style={styles.container}>
-          
+        <TouchableOpacity
+        onPress={() => props.navigation.replace('Screen6')} // Use navigation.replace here
+        style={{ position: 'absolute', top: 15, left: 20, zIndex: 1 }}
+      >
+        <Icon name="arrow-left" size={30} color="red" />
+      </TouchableOpacity>
           <ScrollView contentContainerStyle={styles.scrollContainer}>
             <View style={styles.imageContainer}>
               <Image style={styles.image} source={require('../asset/dp.jpg')} />
@@ -107,11 +113,7 @@ const EditInfo = () => {
 
 
 
-function Screen61() {
-  return (
-    <EditInfo/>
-  )
-}
+
 
 const styles = StyleSheet.create({
     container: {
@@ -149,6 +151,8 @@ const styles = StyleSheet.create({
     },
     saveButton: {
       marginVertical: 15,
+      marginHorizontal:90,
+      marginBottom:30,
       backgroundColor: 'red',
       alignItems: 'center',
       justifyContent: 'center',

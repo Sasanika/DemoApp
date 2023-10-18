@@ -20,7 +20,7 @@ const meetingRooms = [
   { label: 'Mini Meeting Room 2', value: 'mini2', capacity: 5 },
 ];
 
-const BookNewSpace = (props) => {
+function Screen31(props) {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [selectedTime, setSelectedTime] = useState(new Date());
@@ -51,7 +51,12 @@ const BookNewSpace = (props) => {
 
   return (
     <View style={styles.container}>
-      <View style={{ flex: 1, backgroundColor: 'white' }}>
+      <TouchableOpacity
+        onPress={() => props.navigation.replace('Screen3')} // Use navigation.replace here
+        style={{ position: 'absolute', top: 15, left: 20, zIndex: 1 }}
+      >
+        <Icon name="arrow-left" size={30} color="red" />
+      </TouchableOpacity>
         <ScrollView style={styles.scrollContainer}>
           <View style={styles.imageContainer}>
             <Image style={styles.image} source={require('../asset/illus5.png')} />
@@ -145,6 +150,7 @@ const BookNewSpace = (props) => {
       padding: 15,
       justifyContent: 'center',
       borderRadius: 15,
+      margin: 20,
     }}
     disabled={!isSaveEnabled}
   >
@@ -153,18 +159,12 @@ const BookNewSpace = (props) => {
           
           </View>
         </ScrollView>
-      </View>
+      
     </View>
   );
 };
 
-function Screen31(props) {
-  console.log(props);
-  return (
-      
-      <BookNewSpace navigation={props.navigation} />
-  );
-}
+
 
 const styles = StyleSheet.create({
   container: {

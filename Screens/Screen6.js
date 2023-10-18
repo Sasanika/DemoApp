@@ -47,10 +47,10 @@ const MyProfile = (props) => {
 </View>
 
           <TouchableOpacity
-            style={styles.saveButton}
+            style={styles.editButton}
             onPress={() => props.navigation.replace('Screen61')}
           >
-            <Text style={styles.saveButtonText}>Edit Details</Text>
+            <Text style={styles.editButtonText}>Edit Details</Text>
           </TouchableOpacity>
         </ScrollView>
       </View>
@@ -105,15 +105,18 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'red',
   },
-  saveButton: {
-    marginVertical: 15,
+  editButton: {
+    marginLeft: 90,
+    marginRight:90,
+    marginTop: 10,
+    marginBottom: 30,
     backgroundColor: 'red',
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 12,
     borderRadius: 5,
   },
-  saveButtonText: {
+  editButtonText: {
     color: 'white',
     fontWeight: 'bold',
     fontSize: 18,

@@ -18,7 +18,7 @@ import Screen71 from './Screens/Screen71';
 import Screen31 from './Screens/Screen31';
 import Screen32 from './Screens/Screen32';
 import Screen33 from './Screens/Screen33';
-import Screen34 from './Screens/Screen34';
+
 import Screen61 from './Screens/Screen61';
 
 const Stack = createStackNavigator();
@@ -56,11 +56,7 @@ function SecondStackRoutes() {
         options={{ title: 'Booking Confirm' }}
       />
       <Stack.Screen name='Screen33' component={Screen33} options={{ title: 'QR Code' }} />
-      <Stack.Screen
-        name='Screen34'
-        component={Screen34}
-        options={{ title: 'Booking Status' }}
-      />
+      
     </Stack.Navigator>
   );
 }
