@@ -52,7 +52,7 @@ function Screen31(props) {
   return (
     <View style={styles.container}>
       <TouchableOpacity
-        onPress={() => props.navigation.replace('MyBookings')} // Use navigation.replace here
+        onPress={() => props.navigation.replace('MyBookingsMain')} // Use navigation.replace here
         style={{ position: 'absolute', top: 15, left: 20, zIndex: 1 }}
       >
         <Icon name="arrow-left" size={30} color="red" />

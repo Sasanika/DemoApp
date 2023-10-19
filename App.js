@@ -26,15 +26,15 @@ const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
 const FirstStackRoutes = () => (
-  <Stack.Navigator>
+  <Stack.Navigator screenOptions={{ headerShown: false }}>
     <Stack.Screen name='HelpAndSupport' component={Screen7} options={{ title: 'Help & Support' }} />
     <Stack.Screen name='TermsAndServices' component={Screen71} options={{ title: 'Terms & Services' }} />
   </Stack.Navigator>
 );
 
 const SecondStackRoutes = () => (
-  <Stack.Navigator>
-    <Stack.Screen name='MyBookings' component={Screen3} options={{ title: 'My Bookings' }} />
+  <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Screen name='MyBookingsMain' component={Screen3} options={{ title: 'My Bookings' }} />
     <Stack.Screen name='BookNewSpace' component={Screen31} options={{ title: 'Book a New Space' }} />
     <Stack.Screen name='BookingConfirm' component={Screen32} options={{ title: 'Booking Confirm' }} />
     <Stack.Screen name='QRCode' component={Screen33} options={{ title: 'QR Code' }} />
@@ -42,21 +42,21 @@ const SecondStackRoutes = () => (
 );
 
 const ThirdStackRoutes = () => (
-  <Stack.Navigator>
-    <Stack.Screen name='MyProfile' component={Screen6} options={{ title: 'My Profile' }} />
+  <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Screen name='MyProfileMain' component={Screen6} options={{ title: 'My Profile' }} />
     <Stack.Screen name='EditInfo' component={Screen61} options={{ title: 'Edit Info' }} />
   </Stack.Navigator>
 );
 
 const DrawerRoutes = () => (
-  <Drawer.Navigator initialRouteName='ShareSpace'>
-    <Drawer.Screen name='ShareSpace' component={Home} />
+  <Drawer.Navigator initialRouteName='Home Page'>
+    <Drawer.Screen name='Home Page' component={Home} />
     <Drawer.Screen name='Search' component={Screen1} options={{ title: 'Search' }} />
     <Drawer.Screen name='Notifications' component={Screen2} options={{ title: 'Notifications' }} />
-    <Drawer.Screen name='MyBookings' component={SecondStackRoutes} options={{ title: 'My Bookings' }} />
+    <Drawer.Screen name='MyBookings' component={SecondStackRoutes} />
     <Drawer.Screen name='QRCodeScan' component={Screen4} options={{ title: 'QR Code Scan' }} />
     <Drawer.Screen name='Settings' component={Screen5} options={{ title: 'Settings' }} />
-    <Drawer.Screen name='Profile' component={ThirdStackRoutes} options={{ title: 'My Profile' }} />
+    <Drawer.Screen name='Profile' component={ThirdStackRoutes} />
     <Drawer.Screen name='Support' component={FirstStackRoutes} options={{ title: 'Help & Support' }} />
   </Drawer.Navigator>
 );
@@ -75,19 +75,19 @@ const App = () => {
   return (
     <NavigationContainer>
       {appIsReady ? (
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name='Splash' component={Splash} />
           <Stack.Screen name='Splash1' component={Splash1} />
           <Stack.Screen name='Splash2' component={Splash2} />
           <Stack.Screen name='SignUp' component={SignUp} />
           <Stack.Screen name='SignIn' component={SignIn} />
-          <Stack.Screen name='Home' component={DrawerRoutes} />
+          <Stack.Screen name='Home' component={DrawerRoutes} options={{ title: 'Home' }} />
         </Stack.Navigator>
       ) : (
         <Splash0 />
       )}
     </NavigationContainer>
   );
-};
+}
 
 export default App;
