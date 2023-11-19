@@ -1,8 +1,35 @@
-import React from 'react';
+import React , {useState} from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import 'react-native-gesture-handler';
+import { authentication } from '../config/config';
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const Login = (props) => {
+
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+  const onChangeEmail = (email) => {
+    setEmail(email)
+  }
+
+  const onChangePassword = (password) => {
+    setPassword(password)
+  }
+
+  const onPressSignup = () => {
+
+    createUserWithEmailAndPassword(authentication,email,password)
+    .then((re) => {
+      console.log(re);
+    })
+    .catch((re) => {
+      console.log(re);
+    })
+
+    props.navigation.replace('Home')
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.rectanglesContainer}>
@@ -16,21 +43,25 @@ const Login = (props) => {
       <View style={styles.overlay}>
         
         <TextInput
-          placeholder="Username"
+          placeholder="Email"
           placeholderTextColor="white"
           style={styles.input}
+          value={email}
+          onChangeText={onChangeEmail}
         />
         <TextInput
           placeholder="Password"
           placeholderTextColor="white"
           secureTextEntry
           style={styles.input}
+          value={password}
+          onChangeText={onChangePassword}
         />
         
         <Text style={styles.overlayText}>
           By creating an account you agree to our Terms & Conditions and Privacy Policy
         </Text>
-        <TouchableOpacity style={styles.overlayButton} onPress={() => props.navigation.replace('Home')}>
+        <TouchableOpacity style={styles.overlayButton} onPress={onPressSignup}>
           <Text style={styles.overlayButtonText}>Create Account</Text>
         </TouchableOpacity>
 
@@ -42,7 +73,7 @@ const Login = (props) => {
         <Text style={styles.bottomText}>
           Already have an account?  
           <TouchableOpacity onPress={() => props.navigation.replace('SignIn')}>
-          <Text style={{color:'red', fontWeight:'bold',}}>Sign In</Text>
+          <Text style={{color:'red', fontWeight:'bold'}}>Sign In</Text>
           </TouchableOpacity>
         </Text>
       </View>

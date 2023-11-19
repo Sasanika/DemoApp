@@ -1,8 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import 'react-native-gesture-handler';
+import { doc, addDoc, collection } from "firebase/firestore"; 
+import {db} from "..//config/config.jsx"
+import { authentication } from '..//config/config.jsx';
 
 const SignIn = (props) => {
+
+  const [userName,setUserName] = useState("");
+  const [password,setPassword] = useState("");
+
+  const onChangeUserName = (userName) => {
+    setUserName(userName);
+  }
+
+  const onChangePassword = (password) => {
+    setPassword(password);
+  }
+
+  const onPressSignIn = () => {
+
+    addDoc(collection(db, "users"), {
+      userName: userName,
+      password: password
+    });
+    props.navigation.replace('Home')
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.rectanglesContainer}>
@@ -19,16 +43,20 @@ const SignIn = (props) => {
           placeholder="Username"
           placeholderTextColor="white"
           style={styles.input}
+          value={userName}
+          onChangeText={onChangeUserName}
         />
         <TextInput
           placeholder="Password"
           placeholderTextColor="white"
           secureTextEntry
           style={styles.input}
+          value={password}
+          onChangeText={onChangePassword}
         />
         
         
-        <TouchableOpacity style={styles.overlayButton} onPress={() => props.navigation.replace('Home')}>
+        <TouchableOpacity style={styles.overlayButton} onPress={onPressSignIn}>
           <Text style={styles.overlayButtonText}>Login to Your Account</Text>
         </TouchableOpacity>
 

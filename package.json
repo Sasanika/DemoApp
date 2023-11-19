@@ -10,6 +10,9 @@
     "test": "jest"
   },
   "dependencies": {
+    "@firebase/auth": "^1.4.0",
+    "@firebase/firestore": "^4.3.2",
+    "@react-native-async-storage/async-storage": "^1.19.5",
     "@react-native-community/datetimepicker": "^7.6.1",
     "@react-native-masked-view/masked-view": "^0.2.9",
     "@react-native-picker/picker": "^2.5.1",
@@ -17,6 +20,7 @@
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/stack": "^6.3.17",
     "deprecated-react-native-prop-types": "^2.2.0",
+    "firebase": "^10.6.0",
     "patch-package": "^8.0.0",
     "react": "18.2.0",
     "react-native": "0.72.3",
