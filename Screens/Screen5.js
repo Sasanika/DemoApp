@@ -4,7 +4,7 @@ import { IconButton, MD3Colors } from 'react-native-paper';
 import ToggleSwitch from 'toggle-switch-react-native';
 import 'react-native-gesture-handler';
 
-const Setting = () => {
+const Setting = (props) => {
   const [notificationsEnabled, setNotificationsEnabled] = useState(false); // Set to false initially
 
   const toggleNotifications = () => {
@@ -25,8 +25,8 @@ const Setting = () => {
         </Text>
         <ToggleSwitch
           isOn={notificationsEnabled}
-          onColor="gray"
-          offColor="red"
+          onColor="red"
+          offColor="gray"
           label="Notifications"
           labelStyle={{ color: "black", fontWeight: "900" }}
           size="large"
@@ -36,7 +36,7 @@ const Setting = () => {
           Signing out will log you out of your account and remove your access to the app.
           You can sign in again later to continue using our services.
         </Text>
-        <TouchableOpacity onPress={handleSignOut} style={styles.signOutButton}>
+        <TouchableOpacity onPress={() => props.navigation.replace('SignIn')} style={styles.signOutButton}>
           <Text style={styles.signOutButtonText}>Sign Out</Text>
         </TouchableOpacity>
       </View>
