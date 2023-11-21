@@ -5,6 +5,7 @@ import { Picker } from '@react-native-picker/picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import 'react-native-gesture-handler';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const meetingRooms = [
   { label: 'Open Workstation 1', value: 'open1', capacity: 50 },
@@ -20,13 +21,48 @@ const meetingRooms = [
   { label: 'Mini Meeting Room 2', value: 'mini2', capacity: 5 },
 ];
 
+
+
+const saveToAsyncStorage = async(data) => {
+  await AsyncStorage.setItem('name',data.name);
+  await AsyncStorage.setItem('title',data.title);
+  await AsyncStorage.setItem('purpose',data.purpose);
+  await AsyncStorage.setItem('contact',data.contact);
+  await AsyncStorage.setItem('resourse',data.resourse);
+  await AsyncStorage.setItem('date',data.date);
+  await AsyncStorage.setItem('time',data.time);
+}
+
 function Screen31(props) {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [selectedTime, setSelectedTime] = useState(new Date());
   const [showTimePicker, setShowTimePicker] = useState(false);
   const [selectedAttendees, setSelectedAttendees] = useState(2);
+  const [selectedResource,setSelectedResource] = useState("");
   const [isSaveEnabled, setIsSaveEnabled] = useState(false);
+  const [name,setName] = useState("")
+  const [title,setTitle] = useState("")
+  const [purpose,setPurpose] = useState("")
+  const [contact,setContact] = useState("")
+
+
+
+  const onChangeName = (name) =>{
+    setName(name);
+  }
+
+  const onChangeTitle = (title) =>{
+    setTitle(title);
+  }
+
+  const onChangePurpose = (purpose) =>{
+    setPurpose(purpose);
+  }
+
+  const onChangeContact = (contact) =>{
+    setContact(contact);
+  }
 
   useEffect(() => {
     // Enable Save button only when all required data is entered
@@ -61,10 +97,10 @@ function Screen31(props) {
           <View style={styles.imageContainer}>
             <Image style={styles.image} source={require('../asset/illus5.png')} />
           </View>
-          <TextInput style={styles.input} placeholder="Enter your name" />
-          <TextInput style={styles.input} placeholder="Enter the meeting title" />
-          <TextInput style={styles.input} placeholder="Enter the purpose" />
-          <TextInput style={styles.input} placeholder="Contact number or email" />
+          <TextInput style={styles.input} placeholder="Enter your name" value={name} onChange={onChangeName} />
+          <TextInput style={styles.input} placeholder="Enter the meeting title" value={title} onChange={onChangeTitle} />
+          <TextInput style={styles.input} placeholder="Enter the purpose" value={purpose} onChange={onChangePurpose} />
+          <TextInput style={styles.input} placeholder="Contact number or email" value={contact} onChange={onChangeContact} />
           <View style={styles.pickerContainer}>
             <Text>Select number of attendees:</Text>
             <Picker
@@ -79,7 +115,11 @@ function Screen31(props) {
           </View>
           <View style={styles.pickerContainer}>
             <Text>Select a resource:</Text>
-            <Picker style={styles.picker}>
+            <Picker 
+              style={styles.picker}
+              selectedValue={selectedResource}
+              onValueChange={(itemValue) => setSelectedResource(itemValue)}
+            >
               <Picker.Item label="Select a resource" value="select" />
               {meetingRooms
                 .filter((room) => room.capacity >= selectedAttendees)
@@ -141,7 +181,18 @@ function Screen31(props) {
           <View style={styles.saveButtonContainer}>
 
           <TouchableOpacity
-    onPress={() => props.navigation.replace('BookingConfirm')}
+    onPress={() => {
+      saveToAsyncStorage({
+        name: name,
+        title: title,
+        purpose: purpose,
+        contact: contact,
+        time:selectedTime,
+        date:selectedDate,
+        resourse:selectedResource
+
+      })
+      props.navigation.replace('BookingConfirm')}}
     style={{
       flexDirection: 'row',
       alignItems: 'center',

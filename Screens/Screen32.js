@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableOpacity, } from 'react-native';
 import 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const confirmBookings = [
   {
@@ -13,11 +14,25 @@ const confirmBookings = [
   }
 ];
 
+const getDataFromAsyncStorage = async() => {
+  try {
+    const value = await AsyncStorage.getItem('name');
+      if (value !== null) {
+         // We have data!!
+         console.log(value);
+      }
+   } catch (error) {
+        console.log(error);
+ }
+}
+
 const onPress = () => console.log('pressed');
 
 function Screen32(props) {
+  getDataFromAsyncStorage()
   return (
     <View style={[styles.container, { flexDirection: 'column' }]}>
+      
       <TouchableOpacity
         onPress={() => props.navigation.replace('BookNewSpace')} // Use navigation.replace here
         style={{ position: 'absolute', top: 15, left: 20, zIndex: 1 }}

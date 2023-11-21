@@ -17,17 +17,16 @@ const Login = (props) => {
     setPassword(password)
   }
 
-  const onPressSignup = () => {
-
-    createUserWithEmailAndPassword(authentication,email,password)
-    .then((re) => {
+  const onPressSignup = async() => {
+    try{
+      createUserWithEmailAndPassword(authentication,email,password)
+      props.navigation.replace('Home')
+    
+    } catch (e){
       console.log(re);
-    })
-    .catch((re) => {
-      console.log(re);
-    })
+    }
 
-    props.navigation.replace('Home')
+    
   }
 
   return (
