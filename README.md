@@ -1,79 +1,51 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# ShareSpace
 
-# Getting Started
+## Description
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+ShareSpace is a mobile application developed using React Native and Firebase, designed to streamline the reservation process for meeting rooms, equipment, and shared resources within a company. This app aims to enhance scheduling efficiency and resource management by seamlessly integrating with the company's existing calendar and booking system.
 
-## Step 1: Start the Metro Server
+<img src="https://github.com/Sasanika/DemoApp/assets/134100704/f3460c57-01d1-41f5-b27c-bee2577944cf" width="150" >
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Features
 
-To start Metro, run the following command from the _root_ of your React Native project:
+1. **Meeting Room Reservation:** Allows users to reserve meeting rooms conveniently through the app, eliminating the need for manual booking processes.
 
-```bash
-# using npm
-npm start
+<img src="https://github.com/Sasanika/DemoApp/assets/134100704/bf051afc-33d3-4b10-a2a0-21d653957677" width="150" >
+<img src="https://github.com/Sasanika/DemoApp/assets/134100704/70ed1b1d-a016-4a2d-a973-76b47246634c" width="150">
 
-# OR using Yarn
-yarn start
-```
+   
+3. **Equipment Reservation:** Facilitates the reservation of equipment required for meetings or projects, ensuring availability and easy access.
 
-## Step 2: Start your Application
+<img src="https://github.com/Sasanika/DemoApp/assets/134100704/2546c7e3-e436-4336-bef6-256df16d92c0" width="150" >
+<img src="https://github.com/Sasanika/DemoApp/assets/134100704/cac3dde2-ff3b-43f3-b44a-523337222de2" width="150">
+<img src="https://github.com/Sasanika/DemoApp/assets/134100704/06033443-eca7-43f8-9ce5-020ed27586b0" width="150">
+<img src="https://github.com/Sasanika/DemoApp/assets/134100704/443cd1fc-8efb-4982-a697-398b874d2a6c" width="150">
+  
+4. **Seamless Integration:** Integrates smoothly with the company's calendar and booking system, providing real-time updates and ensuring consistency across platforms.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+<img src="https://github.com/Sasanika/DemoApp/assets/134100704/3d4f462c-3b14-45ef-a042-d74bd369da66" width="150" style="padding: 50px;"> <img src="https://github.com/Sasanika/DemoApp/assets/134100704/9df74092-c33e-475f-8b92-776b9313b069" width="150" style="padding: 50px;">
 
-### For Android
+5. **User Authentication:** Implements secure user authentication to ensure that only authorized personnel can make reservations and access sensitive information.
 
-```bash
-# using npm
-npm run android
+<img src="https://github.com/Sasanika/DemoApp/assets/134100704/5997cdad-ce8b-4dc4-9c9e-1283dfa68740" width="150" style="padding: 50px;"> <img src="https://github.com/Sasanika/DemoApp/assets/134100704/014cad5f-7679-4887-aa1d-45f4522b98d2" width="150" style="padding: 50px;">
+  
+6. **Customizable Settings:** Offers customizable settings for administrators to manage permissions, resource availability, and booking rules according to organizational requirements.
 
-# OR using Yarn
-yarn android
-```
+<img src="https://github.com/Sasanika/DemoApp/assets/134100704/17ab8454-5c26-41ed-8768-47e30f8816b0" width="150" >
+<img src="https://github.com/Sasanika/DemoApp/assets/134100704/073ad5f8-cced-4057-8914-ba27833dc786" width="150">
+<img src="https://github.com/Sasanika/DemoApp/assets/134100704/b6cad633-9098-4e2a-90a4-9e988c50a1b4" width="150" >
+<img src="https://github.com/Sasanika/DemoApp/assets/134100704/78e55583-007d-4fc0-8a94-65db22263d7e" width="150">
 
-### For iOS
+## Installation
 
-```bash
-# using npm
-npm run ios
+1. Clone the repository from GitHub: `git clone https://github.com/yourusername/ShareSpace.git`
+2. Navigate to the project directory: `cd ShareSpace`
+3. Install dependencies: `npm install`
+4. Configure Firebase: Add your Firebase configuration details in the appropriate files.
+5. Run the application: `npm start` or `react-native run-android`/`react-native run-ios` depending on your platform.
 
-# OR using Yarn
-yarn ios
-```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## Contact
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+For any inquiries or support, please contact [sasanikaruwanthi@gmail.com].
 
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
