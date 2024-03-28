@@ -4,7 +4,7 @@
 
 ShareSpace is a mobile application developed using React Native and Firebase, designed to streamline the reservation process for meeting rooms, equipment, and shared resources within a company. This app aims to enhance scheduling efficiency and resource management by seamlessly integrating with the company's existing calendar and booking system.
 
-<img src="https://github.com/Sasanika/DemoApp/assets/134100704/f3460c57-01d1-41f5-b27c-bee2577944cf" width="150" >
+<img src="https://github.com/Sasanika/DemoApp/assets/134100704/bb39f525-a8d0-4baf-b377-49512c00a7f4" width="150" >
 
 ## Features
 
