@@ -38,7 +38,7 @@ ShareSpace is a mobile application developed using React Native and Firebase, de
 
 ## Installation
 
-1. Clone the repository from GitHub: `git clone https://github.com/yourusername/ShareSpace.git`
+1. Clone the repository from GitHub: `git clone https://github.com/Sasanika/ShareSpace.git`
 2. Navigate to the project directory: `cd ShareSpace`
 3. Install dependencies: `npm install`
 4. Configure Firebase: Add your Firebase configuration details in the appropriate files.
